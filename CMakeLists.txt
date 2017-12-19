@@ -7,7 +7,7 @@ set(SRC addon.cpp  emitter.cpp)
 
 ##$npm install nan
 ##-I
-include_directories(. /usr/local/include/node node_modules/nan) 
+include_directories(. /usr/local/include/node ${CMAKE_CURRENT_SOURCE_DIR}/node_modules/nan) 
 
 ##-L
 link_directories(.)
