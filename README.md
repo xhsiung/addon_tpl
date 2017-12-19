@@ -1,2 +1,2 @@
-# addon_tpl
-addon_tpl
+# addontpl
+addontpl

@@ -1,0 +1,22 @@
+CC=g++
+CFLAG= -DUSE_LIBUV -std=c++11 -O3 -shared -fPIC -static-libstdc++ -static-libgcc -s -I. -I/usr/local/include/node
+
+LIBS=-L.
+
+OBJS= addon.o
+
+NODE=addon.node
+
+all: task addon
+
+addon: $(OBJS)
+	$(CC) -o  $(NODE)  $^  $(CFLAG) $(LIBS)
+
+%.o:%.cpp
+	$(CC) -c  $<  $(CFLAG) $(LIBS)
+
+task:
+	@echo "test"
+
+clean:
+	rm -rf `find . -name "*.o\|*.node" -print` ; rm -rf $(NODE)
