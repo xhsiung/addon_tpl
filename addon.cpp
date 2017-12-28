@@ -19,4 +19,4 @@ void Init(Local<Object> target){
     Emitter::Init( target);
 }
 
-NODE_MODULE( addon , Init)
+NODE_MODULE( NODE_GYP_MODULE_NAME , Init)

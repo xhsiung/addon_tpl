@@ -12,4 +12,4 @@ void Init(Local<Object> target){
     Nan::SetMethod(target , "ini" , INI::Ini);
 }
 
-NODE_MODULE( addon , Init);
+NODE_MODULE( NODE_GYP_MODULE_NAME , Init);

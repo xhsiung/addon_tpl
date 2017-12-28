@@ -42,4 +42,4 @@ void Init(Local<Object> target){
     Nan::SetMethod( target , "callemit" , CallEmit);
 }
 
-NODE_MODULE(addon, Init)
+NODE_MODULE(NODE_GYP_MODULE_NAME, Init)

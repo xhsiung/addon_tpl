@@ -149,4 +149,4 @@ void Init( Local<Object> target){
     Nan::SetMethod( target , "getArg" , getArg);
 }
 
-NODE_MODULE(addon, Init)
+NODE_MODULE( NODE_GYP_MODULE_NAME, Init)
