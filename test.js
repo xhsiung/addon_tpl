@@ -17,7 +17,7 @@ addon.Emitter.prototype.mytest = function(){
 // })
 
 // o.add();
-// o.show();
+// o.myemit();
 // o.mytest();
 
 class My extends Stream {
