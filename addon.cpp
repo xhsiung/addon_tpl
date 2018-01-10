@@ -15,8 +15,8 @@ NAN_METHOD(MyEmit){
 }
 
 void Init(Local<Object> target){
-    Nan::SetMethod( target , "myemit" , MyEmit);
     Emitter::Init( target);
+    Nan::SetMethod( target , "myemit" , MyEmit);
 }
 
 NODE_MODULE( NODE_GYP_MODULE_NAME , Init)
