@@ -6,7 +6,7 @@ for ( k in Stream.prototype ){
     addon.Emitter.prototype[k] = Stream.prototype[k];
 }
 
-addon.Emitter.prototype.show =  addon.show;
+addon.Emitter.prototype.myemit =  addon.myemit;
 addon.Emitter.prototype.mytest = function(){
     console.log( "mytest");
 }
@@ -40,4 +40,4 @@ my.on("event", function(data , data2){
 })
 
 //test
-emitter.add();
+emitter.myemit();

@@ -3,7 +3,7 @@
 
 using namespace v8;
 
-NAN_METHOD(Show){
+NAN_METHOD(MyEmit){
     int argc = 2;
     Local<Value> argv[argc] = {
         Nan::New("event").ToLocalChecked(),
@@ -15,7 +15,7 @@ NAN_METHOD(Show){
 }
 
 void Init(Local<Object> target){
-    Nan::SetMethod( target , "show" , Show);
+    Nan::SetMethod( target , "myemit" , MyEmit);
     Emitter::Init( target);
 }
 
