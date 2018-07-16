@@ -23,6 +23,7 @@ NAN_MODULE_INIT(Emitter::Init){
 
 NAN_METHOD(Emitter::New){
     if (info.IsConstructCall()){
+	// Invoked as constructor: new Emitter(...)
         Emitter *obj = new Emitter();
         obj->Wrap( info.This());
         obj->instance = obj ;
@@ -30,6 +31,7 @@ NAN_METHOD(Emitter::New){
         obj->emit = new Nan::Callback( Local<Function>::Cast( obj->handle()->Get( Nan::New("emit").ToLocalChecked()) ));
         info.GetReturnValue().Set( info.This() );
     }else{
+	//Invoked as plain function Emitter(...), turn into construct call.
         const int argc = 1;
         Local<Value> argv[argc] = {info[0]};
         Local<Function> cons = Nan::New<Function>(construct);
