@@ -14,11 +14,14 @@
     { NULL, NULL, 0, NULL }
 };
 
+char mod_name[] = "myModule";
 
+//for python3.x
+#if PY_MAJOR_VERSION >= 3
 // Our Module Definition struct
 static struct PyModuleDef myModule = {
     PyModuleDef_HEAD_INIT,
-    "myModule",
+    mod_name,
     "Test Module",
     -1,
     myMethods
@@ -29,3 +32,11 @@ static struct PyModuleDef myModule = {
 PyMODINIT_FUNC PyInit_addon(void){
     return PyModule_Create(&myModule);
 }
+
+#else
+//for python2.x
+void inithelloworld(void) {
+	Py_InitModule3(mod_name, myModule, "test1");
+}
+
+#endif
