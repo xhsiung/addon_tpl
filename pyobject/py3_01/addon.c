@@ -1,3 +1,8 @@
+
+#ifdef __cplusplus 
+extern "C" {
+#endif 
+
 #include "libaddon.h"
 
 // Our Module's Function Definition struct
@@ -38,5 +43,8 @@ PyMODINIT_FUNC PyInit_addon(void){
 void inithelloworld(void) {
 	Py_InitModule3(mod_name, myModule, "test1");
 }
-
 #endif
+
+#ifdef __cplusplus  
+}  
+#endif  
