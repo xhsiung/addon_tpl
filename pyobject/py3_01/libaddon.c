@@ -124,5 +124,5 @@
     // printf("---->%ld\n" , test2);
 
     
-    return Py_BuildValue("{s:i,s:i}","abc", 123, "def", 456);
+    return Py_BuildValue("{s:i,s:i}","abc", 123, "sum", 456);
 }
